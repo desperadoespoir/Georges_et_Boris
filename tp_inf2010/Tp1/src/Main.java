@@ -4,6 +4,8 @@
  * @date : 2015-09-06
  */
 
+/*********     methode clear dans la classe pixelmap ,  verifier si c'est bien fait       *************/
+
 public class Main 
 {
 	/**
@@ -40,7 +42,7 @@ public class Main
 		/**
 		 * Exercice 2
 		 */
-		
+		/*
 		PixelMapPlus pmp = new PixelMapPlus("./ed.ppm");
 		
 		PixelMapPlus hpmp = new PixelMapPlus( pmp );
@@ -69,6 +71,6 @@ public class Main
 		
 		wName = "Edsger Dijkstra";
 		new DisplayImageWindow(wName, pmp);
-		
+		*/
 	}
 }

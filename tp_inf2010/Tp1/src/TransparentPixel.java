@@ -20,56 +20,72 @@ public class TransparentPixel extends AbstractPixel
 		rgba[3] = 255;
 	}
 	
+	public int moyenne() {                       // *************************************
+		return ((rgba[0] + rgba[1] + rgba[2])/3);
+	}
 	/**
 	 * Assigne une valeur au pixel
 	 * @param rgb: valeurs a assigner 
 	 */
-	TransparentPixel(int[] rgba)
+	TransparentPixel(int[] rgba)     // *************************************
 	{
 		// compléter
+		this.rgba = new int[4];
 		
+		this.rgba[0] = rgba[0];
+		this.rgba[1] = rgba[1];
+		this.rgba[2] = rgba[2];
+		this.rgba[3] = rgba[3];
 	}
 	
 	/**
 	 * Renvoie un pixel copie de type noir et blanc
 	 */
-	public BWPixel toBWPixel()
+	public BWPixel toBWPixel()     // *************************************
 	{
 		// compléter
+		
+		return new BWPixel((moyenne()<= 127)? false:true);
+
 		
 	}
 	
 	/**
 	 * Renvoie un pixel copie de type tons de gris
 	 */
-	public GrayPixel toGrayPixel()
+	public GrayPixel toGrayPixel()    // *************************************
 	{
 		// compléter
-		
+		return new GrayPixel(moyenne());
 	}
 	
 	/**
 	 * Renvoie un pixel copie de type couleurs
 	 */
-	public ColorPixel toColorPixel()
+	public ColorPixel toColorPixel()   // *************************************
 	{
 		// compléter
 		
+		int rgb[] = {rgba[0], rgba[1], rgba[2]};
+		
+		return new ColorPixel(rgb);
 	}
 	
 	/**
 	 * Renvoie le negatif du pixel (255-pixel)
 	 */
-	public TransparentPixel Negative()
+	public TransparentPixel Negative()   // *************************************
 	{
 		// compléter
-		
+		int rgba[] = {255-this.rgba[0],255-this.rgba[1],255-this.rgba[2],this.rgba[3]};
+		return new TransparentPixel(rgba);
 	}
 	
-	public TransparentPixel toTransparentPixel()
+	public TransparentPixel toTransparentPixel()   // *************************************
 	{
 		// compléter
-		
+		return new TransparentPixel(rgba);
+
 	}
 	
 	public void setAlpha(int alpha)

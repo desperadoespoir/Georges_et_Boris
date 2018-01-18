@@ -20,9 +20,10 @@ public class GrayPixel  extends AbstractPixel
 	 * Constructeur par parametre
 	 * @param pixel : valeur du pixel
 	 */
-	GrayPixel(int pixel)
+	GrayPixel(int pixel)    // *************************************
 	{
 		// compléter
+		this.pixel =pixel;
 		
 	}
 	
@@ -46,42 +47,51 @@ public class GrayPixel  extends AbstractPixel
 	/**
 	 * Renvoie un pixel copie de type noir et blanc
 	 */
-	public BWPixel toBWPixel()
+	public BWPixel toBWPixel()   // *************************************
 	{
 		// compléter
+		
+		return new BWPixel((pixel <= 127)? false:true);
 		
 	}
 	
 	/**
 	 * Renvoie un pixel copie de type tons de gris
 	 */
-	public GrayPixel toGrayPixel()
+	public GrayPixel toGrayPixel()      // *************************************
 	{
 		// compléter
-		
+		return new GrayPixel(pixel);
 	}
 	
 	/**
 	 * Renvoie un pixel copie de type couleurs
 	 */
-	public ColorPixel toColorPixel()
+	public ColorPixel toColorPixel()     // *************************************
 	{
 		// compléter
+		int rgb[] = {pixel, pixel, pixel};
 		
+		return new ColorPixel(rgb);
+
 	}
 	
-	public TransparentPixel toTransparentPixel()
+	public TransparentPixel toTransparentPixel()    // *************************************
 	{
 		// compléter
+		int rgba[] = {pixel, pixel, pixel,255};
 		
+		return new TransparentPixel(rgba);
 	}
 	
 	/**
 	 * Renvoie le negatif du pixel (255-pixel)
 	 */
-	public AbstractPixel Negative()
+	public AbstractPixel Negative()     // *************************************
 	{
 		// compléter
+		
+		return new GrayPixel(255 - pixel);
 	}
 	
 	public void setAlpha(int alpha)
